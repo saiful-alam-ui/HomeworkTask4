@@ -1,17 +1,33 @@
-package It.vcd;
+package lt.vcd;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+import java.util.Scanner;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+public class Task1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read inputs with prompts
+        System.out.print("Enter p: ");
+        int p = scanner.nextInt();
+
+        System.out.print("Enter s: ");
+        int s = scanner.nextInt();
+
+        System.out.print("Enter m: ");
+        int m = scanner.nextInt();
+
+        // Calculate weeks required
+        int k;
+        if (s >= p) {
+            k = 0;
+        } else {
+            int remaining = p - s;
+            k = (remaining + m - 1) / m; // Ceiling division
         }
+
+        // Print output
+        System.out.println("k = " + k);
+
+        scanner.close();
     }
 }
